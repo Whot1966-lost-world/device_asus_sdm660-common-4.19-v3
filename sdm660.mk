@@ -29,8 +29,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0 \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio@2.0-service \
-    android.hardware.audio@4.0-service \
-    android.hardware.audio.effect@2.0-service \
     android.hardware.audio@5.0 \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.common@5.0 \
@@ -81,7 +79,6 @@ PRODUCT_COPY_FILES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    com.dsi.ant.antradio_library \
     com.dsi.ant@1.0.vendor
 
 # ATRACE_HAL
@@ -125,10 +122,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
-# CNE
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
 # Display
 PRODUCT_PACKAGES += \
     gralloc.sdm660 \
@@ -137,7 +130,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libtinyxml \
     libqdMetaData \
-    libqdMetaData.system \
     libvulkan
 
 PRODUCT_PACKAGES += \
@@ -167,9 +159,7 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    android.hardware.broadcastradio@1.0-impl \
-    vendor.qti.hardware.fm@1.0:64 \
-    vendor.qti.hardware.fm@1.0.vendor:64
+    android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_PACKAGES += \
     FM2 \
@@ -212,10 +202,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# HW crypto
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
@@ -244,10 +230,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service
 
 # Media
-PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl
-
-# Media configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
@@ -446,9 +428,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel
-
-QCOM_SOONG_NAMESPACE := \
-    $(LOCAL_PATH)/qcom-caf
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
